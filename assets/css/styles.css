@@ -749,7 +749,7 @@ body.home {
   margin-bottom: 0;
 }
 
-/* Responsive layout for “real homes” */
+/* Responsive layout for real homes */
 @media (max-width: 900px) {
   .home-real {
     grid-template-columns: minmax(0, 1fr);
