@@ -208,4 +208,562 @@
       display: flex;
     }
   }
+  /* ==========================================
+   HOME PAGE — PARALLAX, PANELS, HOVERS
+   (safe to append to existing CSS)
+========================================== */
+
+body.home {
+    background: radial-gradient(circle at top, rgba(236,243,158,0.65), transparent 55%),
+                #f4f7f1;
+  }
+  
+  /* Slightly elevated header over hero layers */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: linear-gradient(to bottom, rgba(19,42,19,0.96), rgba(19,42,19,0.92));
+    backdrop-filter: blur(10px);
+  }
+  
+  /* -------- Hero with layers -------- */
+  
+  .home-hero {
+    position: relative;
+    min-height: 90vh;
+    overflow: hidden;
+    color: var(--text-light);
+    padding: 120px 0 80px;
+  }
+  
+  /* Background layers */
+  .hero-layer {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-repeat: no-repeat;
+    background-size: cover;
+    mix-blend-mode: multiply;
+    opacity: 0.85;
+  }
+  
+  .hero-layer--mountains {
+    background-image: linear-gradient(135deg, var(--evergreen), var(--hunter));
+  }
+  
+  .hero-layer--forest {
+    background-image: radial-gradient(circle at bottom, var(--fern), transparent 55%);
+    opacity: 0.9;
+  }
+  
+  .hero-layer--glow {
+    background-image: radial-gradient(circle at top right, var(--lime), transparent 60%);
+    opacity: 0.75;
+  }
+  
+  .home-hero-inner {
+    position: relative;
+    z-index: 5;
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 40px;
+    color: #fdfdfb;
+  }
+  
+  .home-hero-copy .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 0.8rem;
+    color: #e5f3d4;
+    margin-bottom: 10px;
+  }
+  
+  .home-hero-copy h1 {
+    font-size: 2.8rem;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    color: #ffffff;
+  }
+  
+  .hero-sub {
+    max-width: 600px;
+    font-size: 1.1rem;
+    opacity: 0.96;
+  }
+  
+  .hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 28px;
+  }
+  
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 22px;
+    border-radius: 999px;
+    font-weight: 600;
+    border: 2px solid transparent;
+    text-decoration: none;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, color 0.18s ease;
+  }
+  
+  .btn-primary {
+    background: var(--lime);
+    color: #132A13;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.24);
+  }
+  
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.32);
+  }
+  
+  .btn-ghost {
+    background: transparent;
+    border-color: rgba(236,243,158,0.7);
+    color: #f7fbe9;
+  }
+  
+  .btn-ghost:hover {
+    background: rgba(236,243,158,0.12);
+  }
+  
+  .hero-mini-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 24px;
+  }
+  
+  .hero-mini-tags span {
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(0,0,0,0.25);
+    font-size: 0.8rem;
+  }
+  
+  /* Visual / floating badges */
+  
+  .home-hero-visual {
+    position: relative;
+    min-height: 260px;
+  }
+  
+  .floating-badge {
+    position: absolute;
+    max-width: 260px;
+    padding: 18px 20px;
+    border-radius: 16px;
+    background: rgba(9,21,9,0.9);
+    color: #f6fbe9;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+    transform-origin: center;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    backdrop-filter: blur(8px);
+  }
+  
+  .floating-badge h3 {
+    font-size: 1rem;
+    margin-bottom: 6px;
+    color: #fefefc;
+  }
+  
+  .floating-badge p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: 0;
+  }
+  
+  .floating-badge:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.42);
+    background: rgba(10,26,10,0.98);
+  }
+  
+  .badge--top {
+    top: 0;
+    right: 10%;
+  }
+  
+  .badge--middle {
+    top: 40%;
+    left: 0;
+  }
+  
+  .badge--bottom {
+    bottom: 0;
+    right: 5%;
+  }
+  
+  /* Scroll hint */
+  
+  .scroll-hint {
+    position: absolute;
+    left: 50%;
+    bottom: 24px;
+    transform: translateX(-50%);
+    width: 34px;
+    height: 56px;
+    border-radius: 999px;
+    border: 2px solid rgba(255,255,255,0.7);
+    background: transparent;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 8px;
+    cursor: pointer;
+  }
+  
+  .scroll-dot {
+    width: 6px;
+    height: 10px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.8);
+    animation: scroll-dot 1.3s ease-in-out infinite;
+  }
+  
+  @keyframes scroll-dot {
+    0% { transform: translateY(0); opacity: 1; }
+    60% { transform: translateY(18px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 0; }
+  }
+  
+  /* -------- Steps strip -------- */
+  
+  .home-steps {
+    background: #f8faef;
+    padding: 80px 0 90px;
+  }
+  
+  .section-intro {
+    max-width: 640px;
+    margin-bottom: 32px;
+  }
+  
+  .step-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+  }
+  
+  .step-card {
+    position: relative;
+    background: #ffffff;
+    padding: 26px 22px 24px;
+    border-radius: 16px;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+    overflow: hidden;
+    transform-origin: center;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+  }
+  
+  .step-card::after {
+    content: "";
+    position: absolute;
+    inset: auto -40px 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--fern), var(--palm), var(--lime));
+    opacity: 0.85;
+  }
+  
+  .step-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 34px rgba(0,0,0,0.12);
+  }
+  
+  .step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 999px;
+    background: rgba(144,169,85,0.12);
+    color: var(--evergreen);
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+  }
+  
+  /* -------- Panels (flip-on-hover style) -------- */
+  
+  .home-panels {
+    padding: 90px 0;
+    background: radial-gradient(circle at center, #f1f6e6, #e4edd3);
+  }
+  
+  .panels-header {
+    max-width: 680px;
+    margin: 0 auto 40px;
+    text-align: center;
+  }
+  
+  .panels-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 26px;
+  }
+  
+  .panel-card {
+    perspective: 1200px;
+  }
+  
+  .panel-card-front,
+  .panel-card-back {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 24px 22px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+    backface-visibility: hidden;
+    transition: transform 0.4s ease, box-shadow 0.2s ease;
+  }
+  
+  .panel-card-front {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .panel-card-back {
+    position: relative;
+    margin-top: -100%;
+    z-index: 1;
+    transform: rotateX(-90deg);
+  }
+  
+  .panel-card:hover .panel-card-front {
+    transform: translateY(-6px) rotateX(90deg);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.16);
+  }
+  
+  .panel-card:hover .panel-card-back {
+    transform: translateY(-6px) rotateX(0deg);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+  }
+  
+  /* -------- Classes band -------- */
+  
+  .home-classes {
+    padding: 70px 0 90px;
+    background: #132A13;
+    color: #f6fbe9;
+  }
+  
+  .home-classes-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 34px;
+  }
+  
+  .home-classes h2 {
+    color: #fdfdfb;
+  }
+  
+  .home-classes .small {
+    font-size: 0.9rem;
+    opacity: 0.9;
+  }
+  
+  .classes-pill-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .pill {
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(236,243,158,0.7);
+    font-size: 0.85rem;
+    background: rgba(0,0,0,0.25);
+  }
+  
+  /* -------- Responsive tweaks -------- */
+  
+  @media (max-width: 900px) {
+    .home-hero-inner {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  
+    .home-hero-visual {
+      min-height: 220px;
+    }
+  
+    .badge--top,
+    .badge--middle,
+    .badge--bottom {
+      position: static;
+      margin-bottom: 12px;
+    }
+  
+    .floating-badge {
+      max-width: none;
+      width: 100%;
+    }
+  
+    .scroll-hint {
+      display: none;
+    }
+  }
+/* ==========================================
+   UPDATED HERO VISUAL IMAGE
+========================================== */
+
+.hero-photo-frame {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.4);
+  margin-bottom: 24px;
+}
+
+.hero-photo-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Keep floating badges but nudge them slightly
+   so they sit nicely around the hero photo */
+.home-hero-visual {
+  position: relative;
+  min-height: 320px;
+}
+
+.badge--top {
+  top: 6%;
+  right: 2%;
+}
+
+.badge--middle {
+  top: 46%;
+  left: -4%;
+}
+
+.badge--bottom {
+  bottom: 0;
+  right: 0;
+}
+
+/* Responsive tweak for hero image + badges */
+@media (max-width: 900px) {
+  .home-hero-visual {
+    min-height: auto;
+  }
+
+  .hero-photo-frame {
+    margin-bottom: 18px;
+  }
+
+  .badge--top,
+  .badge--middle,
+  .badge--bottom {
+    position: static;
+    margin-bottom: 10px;
+  }
+
+  .floating-badge {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+/* ==========================================
+   NEW “REAL HOMES” SECTION WITH image4.png
+========================================== */
+
+.home-panels {
+  padding: 90px 0;
+  background: radial-gradient(circle at top, #f1f6e6, #e4edd3);
+}
+
+.home-real {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
+  gap: 40px;
+  align-items: center;
+}
+
+.home-real-image {
+  position: relative;
+}
+
+.home-real-image img {
+  display: block;
+  width: 100%;
+  border-radius: 26px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.18);
+  object-fit: cover;
+}
+
+.home-real-copy h2 {
+  margin-bottom: 16px;
+}
+
+.home-real-copy p {
+  margin-bottom: 20px;
+}
+
+.real-points {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.real-point {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: 10px;
+  row-gap: 4px;
+  align-items: flex-start;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(19,42,19,0.08);
+}
+
+.real-point:last-child {
+  border-bottom: none;
+}
+
+.real-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--fern), var(--lime));
+  box-shadow: 0 0 0 4px rgba(144,169,85,0.35);
+  margin-top: 4px;
+}
+
+.real-point h3 {
+  margin-bottom: 4px;
+  font-size: 1rem;
+}
+
+.real-point p {
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+/* Responsive layout for “real homes” */
+@media (max-width: 900px) {
+  .home-real {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .home-real-image {
+    order: -1;
+  }
+}
+/* Make the bottom image (image4.png) shorter */
+.home-real-image img {
+  height: 700px;       
+  object-fit: cover;    
+  width: 100%;
+  border-radius: 26px;
+}
   
