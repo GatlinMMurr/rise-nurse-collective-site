@@ -75,7 +75,7 @@
   }
   
   .nav-logo img {
-    height: 60px;
+    height: 120px;
   }
   
   nav ul {
@@ -231,7 +231,7 @@ body.home {
   
   .home-hero {
     position: relative;
-    min-height: 90vh;
+    min-height: 80vh;
     overflow: hidden;
     color: var(--text-light);
     padding: 120px 0 80px;
@@ -749,7 +749,7 @@ body.home {
   margin-bottom: 0;
 }
 
-/* Responsive layout for real homes */
+/* Responsive layout for “real homes” */
 @media (max-width: 900px) {
   .home-real {
     grid-template-columns: minmax(0, 1fr);
