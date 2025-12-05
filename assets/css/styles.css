@@ -1549,3 +1549,21 @@ footer {
   transform: translateY(-3px);
   background: var(--hunter);
 }
+.privacy-content {
+  padding: 70px 0 90px;
+  background: #ffffff;
+}
+
+.privacy-content h2 {
+  margin-top: 32px;
+  color: var(--evergreen);
+}
+.terms-content {
+  padding: 70px 0 90px;
+  background: #ffffff;
+}
+
+.terms-content h2 {
+  margin-top: 32px;
+  color: var(--evergreen);
+}

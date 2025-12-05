@@ -4,82 +4,140 @@
   <meta charset="UTF-8">
   <title>Services | Rise Nurse Collective</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-<body>
-  <header>
+<body class="services-page">
+
+  <!-- Header / Nav -->
+  <header class="site-header">
     <div class="container nav-container">
       <a href="index.html" class="nav-logo">
-        <img src="assets/images/logo-light.jpg" alt="Rise Nurse Collective logo">
+        <img src="assets/images/logo-clear2.png" alt="Rise Nurse Collective logo">
       </a>
       <div class="mobile-toggle" aria-label="Toggle navigation">&#9776;</div>
       <nav>
         <ul>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="about.html">ABOUT US</a></li>
+          <li><a href="services.html" class="active">SERVICES</a></li>
           <li><a href="faq.html">FAQ</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="container">
-      <h1>Our Services</h1>
-      <p>
-        Comprehensive DDA Nurse Delegation and supportive nursing services tailored to individuals
-        with intellectual and developmental disabilities.
-      </p>
+  <!-- HERO (same layout as about hero, with image5.png) -->
+  <section class="about-hero-clean services-hero">
+    <div class="container about-hero-grid">
+      <div class="about-hero-copy">
+        <h1>How we support your agency</h1>
+        <p class="about-hero-intro">
+          Rise Nurse Collective provides DDA Nurse Delegation, training, and consultation
+          designed around the real needs of people with intellectual and developmental disabilities.
+        </p>
+        <p>
+          Our goal is to make nursing support clear, consistent, and sustainable—so your staff
+          feel confident, your documentation is compliant, and the people you support stay at
+          the center of every decision.
+        </p>
+      </div>
+
+      <div class="about-hero-photo">
+        <div class="about-photo-frame">
+          <img src="assets/images/image5.png" alt="Nurse delegation and training services">
+        </div>
+      </div>
     </div>
   </section>
 
-  <section>
-    <div class="container">
-      <h2>DDA Nurse Delegation</h2>
-      <p>
-        We provide ongoing Nurse Delegation services in accordance with Maryland regulations. Our RNs:
-      </p>
-      <ul>
-        <li>Assess individuals for delegable nursing tasks</li>
-        <li>Develop and update nursing care plans</li>
-        <li>Train and evaluate direct support staff competency</li>
-        <li>Provide ongoing supervision and re-delegation as needed</li>
-        <li>Document delegation in compliance with DDA and nursing board standards</li>
-      </ul>
+  <!-- “How we support agencies” (reusing about-who layout + logo) -->
+  <section class="about-who services-intro">
+    <div class="container about-who-grid">
+      <div class="about-who-logo">
+        <div class="about-logo-pill">
+          <img src="assets/images/logo-clear2.png" alt="Rise Nurse Collective logo">
+        </div>
+      </div>
+      <div class="about-who-copy">
+        <h2>How we support agencies</h2>
+        <p>
+          We partner with providers to align day-to-day support with nursing regulations,
+          without losing sight of the person. Our services are built for real homes, busy staff,
+          and complex systems—turning requirements into clear steps your team can follow.
+        </p>
+        <p>
+          From ongoing delegation visits to focused training and consultation, our nursing support
+          is designed to fit the way your agency actually operates, not the other way around.
+        </p>
+      </div>
     </div>
   </section>
 
-  <section>
+  <!-- Three main service “pillars” (same layout as about-pillars) -->
+  <section class="about-pillars services-pillars">
     <div class="container">
-      <h2>Caregiver & Staff Training</h2>
-      <p>
-        Our nurses equip staff and caregivers with the skills and confidence they need to safely complete
-        delegated nursing tasks. Training may include:
-      </p>
-      <ul>
-        <li>Medication administration and documentation</li>
-        <li>Health observation and when to notify the nurse</li>
-        <li>Safety, infection control, and emergency response</li>
-        <li>Person-centered approaches to health support</li>
-      </ul>
-      <p><em>Future booking system will allow agencies to schedule classes online.</em></p>
+      <div class="about-pillars-grid">
+        <article class="pillar">
+          <h3>DDA Nurse Delegation</h3>
+          <p>
+            Ongoing delegation services in accordance with Maryland regulations, including:
+          </p>
+          <ul>
+            <li>Assessment for delegable nursing tasks</li>
+            <li>Development and updates of nursing care plans</li>
+            <li>Training and evaluation of direct support staff competency</li>
+            <li>Ongoing supervision and re-delegation as needed</li>
+            <li>Documentation that aligns with DDA and nursing board standards</li>
+          </ul>
+        </article>
+
+        <article class="pillar">
+          <h3>Caregiver & Staff Training</h3>
+          <p>
+            Practical, person-centered trainings to build confidence and competency, such as:
+          </p>
+          <ul>
+            <li>Medication administration and documentation</li>
+            <li>Health observation and when to notify the nurse</li>
+            <li>Safety, infection control, and emergency response</li>
+            <li>Person-centered approaches to health support</li>
+          </ul>
+          <p><em>Future booking tools will allow agencies to schedule classes online.</em></p>
+        </article>
+
+        <article class="pillar">
+          <h3>Health Consultation & Support</h3>
+          <p>
+            Collaborative consultation to support the team as health needs change, including:
+          </p>
+          <ul>
+            <li>Review of new diagnoses and medications</li>
+            <li>Transition planning between settings</li>
+            <li>Care plan updates and risk mitigation</li>
+            <li>Team education around complex health needs</li>
+          </ul>
+        </article>
+      </div>
     </div>
   </section>
 
-  <section>
-    <div class="container">
-      <h2>Health Consultation & Support</h2>
-      <p>
-        We collaborate with teams as health needs change. Consultation can support:
-      </p>
-      <ul>
-        <li>Review of new diagnoses and medications</li>
-        <li>Transition planning between settings</li>
-        <li>Care plan updates and risk mitigation</li>
-        <li>Team education around complex health needs</li>
-      </ul>
+  <!-- Optional detailed band for emphasis (simple + clean) -->
+  <section class="services-summary-band">
+    <div class="container services-summary-inner">
+      <div>
+        <h2>A partnership, not just a service list.</h2>
+        <p>
+          Every agency and team is different. We tailor delegation, training, and consultation
+          to your staffing model, documentation systems, and the individuals you support—so nursing
+          support feels like part of your culture, not an extra layer.
+        </p>
+      </div>
+      <div class="services-summary-cta">
+        <p>Ready to talk through what your agency needs?</p>
+        <a href="contact.html" class="btn btn-about">Connect with us</a>
+      </div>
     </div>
   </section>
 

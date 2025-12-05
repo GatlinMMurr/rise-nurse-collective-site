@@ -4,110 +4,207 @@
   <meta charset="UTF-8">
   <title>Contact Us | Rise Nurse Collective</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Global Styles -->
   <link rel="stylesheet" href="assets/css/styles.css">
-  <style>
-    /* Simple contact form styling */
-    form.contact-form {
-      max-width: 600px;
-      margin: 0 auto;
-      background: #ffffff;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    }
-    form.contact-form label {
-      display: block;
-      margin-bottom: 6px;
-      font-weight: 600;
-    }
-    form.contact-form input,
-    form.contact-form textarea {
-      width: 100%;
-      padding: 10px;
-      border-radius: 6px;
-      border: 1px solid #d0d8cf;
-      margin-bottom: 16px;
-      font-family: inherit;
-      font-size: 1rem;
-    }
-    form.contact-form button {
-      background: var(--evergreen);
-      color: #fff;
-      border: none;
-      padding: 12px 24px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: 600;
-    }
-    form.contact-form button:hover {
-      background: var(--hunter);
-    }
-  </style>
 </head>
-<body>
-  <header>
+<body class="contact-page">
+
+  <!-- NAV -->
+  <header class="site-header">
     <div class="container nav-container">
       <a href="index.html" class="nav-logo">
-        <img src="assets/images/logo-light.jpg" alt="Rise Nurse Collective logo">
+        <img src="assets/images/logo-clear2.png" alt="Rise Nurse Collective logo">
       </a>
-      <div class="mobile-toggle" aria-label="Toggle navigation">&#9776;</div>
+
+      <div class="mobile-toggle">&#9776;</div>
+
       <nav>
         <ul>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="about.html">ABOUT US</a></li>
+          <li><a href="services.html">SERVICES</a></li>
           <li><a href="faq.html">FAQ</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html" class="active">CONTACT</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <section class="hero">
+  <!-- HERO -->
+  <section class="contact-hero">
     <div class="container">
-      <h1>Contact Us</h1>
+      <h1>Get in Touch!</h1>
       <p>
-        Have a question about Nurse Delegation, training, or partnering with Rise Nurse Collective?
-        Reach out using the form below.
+        Tell us about your agency’s needs, and we’ll reach out shortly.  
+        Your answers help us build a clear picture of your nursing challenges and priorities, allowing us to customize delegation, clinical support, and MTTP training specifically for your agency.
       </p>
+      
     </div>
   </section>
 
-  <section>
-    <div class="container">
-      <form class="contact-form" action="#" method="post">
-        <!-- Replace action with your form handler or HIPAA-compliant form provider when ready -->
-        <label for="name">Name</label>
-        <input id="name" name="name" type="text" required>
+  <!-- MULTI-STEP FORM -->
+  <section class="contact-section">
+    <div class="container contact-wizard">
 
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" required>
+      <!-- Progress Bar -->
+      <div class="wizard-progress">
+        <div class="wizard-progress-inner" id="wizardProgress"></div>
+      </div>
 
-        <label for="phone">Phone</label>
-        <input id="phone" name="phone" type="tel">
+      <form id="wizardForm" class="wizard-form">
 
-        <label for="message">How can we help?</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
+        <!-- STEP 1 -->
+        <div class="wizard-step active">
+          <h2>General Contact Information</h2>
 
-        <p style="font-size:0.85rem; margin-bottom:12px;">
-          Please do not share detailed medical information in this form. We will follow up securely.
-        </p>
+          <label>Agency Name</label>
+          <input type="text" name="agency_name" required>
 
-        <button type="submit">Send Message</button>
+          <label>Your Name</label>
+          <input type="text" name="contact_name" required>
+
+          <label>Email</label>
+          <input type="email" name="email" required>
+
+          <label>Phone</label>
+          <input type="tel" name="phone">
+
+          <label>What type of services does your agency provide?</label>
+          <input type="text" name="services" placeholder="Residential, Day, Supported Living, etc.">
+
+          <label>Which counties do you operate in?</label>
+          <input type="text" name="counties">
+
+          <button type="button" class="wizard-next">Next</button>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="wizard-step">
+          <h2>Individuals Supported</h2>
+
+          <label>Total number of individuals supported</label>
+          <input type="number" name="total_individuals">
+
+          <label>How many require delegation or RN CM/DN?</label>
+          <input type="number" name="delegation_count">
+
+          <button type="button" class="wizard-back">Back</button>
+          <button type="button" class="wizard-next">Next</button>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="wizard-step">
+          <h2>Nursing Needs & Support Areas</h2>
+
+          <label>What gaps or challenges are you experiencing with your current nursing support?</label>
+          <textarea name="nursing_gaps" rows="4"></textarea>
+
+          <label>What is a priority to you when deciding on a nurse?</label>
+          <textarea name="nurse_priority" rows="3"></textarea>
+
+          <p><strong>Do you currently support any individuals with:</strong></p>
+
+          <div class="grid-2">
+            <div>
+              <label>G-Tube — how many?</label>
+              <input type="number" name="gtube_count">
+            </div>
+            <div>
+              <label>Colostomy — how many?</label>
+              <input type="number" name="colostomy_count">
+            </div>
+            <div>
+              <label>Hoyer Lift — how many?</label>
+              <input type="number" name="hoyer_count">
+            </div>
+            <div>
+              <label>Diabetics on insulin — how many?</label>
+              <input type="number" name="insulin_count">
+            </div>
+            <div>
+              <label>Active seizures — how many?</label>
+              <input type="number" name="seizure_count">
+            </div>
+          </div>
+
+          <button type="button" class="wizard-back">Back</button>
+          <button type="button" class="wizard-next">Next</button>
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="wizard-step">
+          <h2>Staffing & Training</h2>
+
+          <label>Approximately how many staff members require MTTP trainings?</label>
+          <input type="number" name="mttp_count">
+
+          <label>Are MTTP trainings taught in-house or outsourced?</label>
+          <input type="text" name="mttp_setup">
+
+          <label>What are the most significant training or competency challenges your staff encounter?</label>
+          <textarea name="training_challenges" rows="4"></textarea>
+
+          <button type="button" class="wizard-back">Back</button>
+          <button type="button" class="wizard-next">Next</button>
+        </div>
+
+        <!-- STEP 5 -->
+        <div class="wizard-step">
+          <h2>Compliance & Program Goals</h2>
+
+          <label>Have you encountered recent challenges with compliance, documentation, or audits from DDA or OHCQ?</label>
+          <textarea name="compliance_issues" rows="4"></textarea>
+
+          <label>Are there particular clinical concerns you’d like extra support with?</label>
+          <input type="text" name="clinical_support" placeholder="Med Errors, Aspiration Risks, Choking, Seizures, etc.">
+
+          <label>Desired outcomes from nursing support from Rise Nurse Collective</label>
+          <textarea name="nursing_outcomes" rows="4"></textarea>
+
+          <label>What does a successful nurse/agency partnership look like to you?</label>
+          <textarea name="partnership_vision" rows="4"></textarea>
+
+          <button type="button" class="wizard-back">Back</button>
+          <button type="button" class="wizard-next">Next</button>
+        </div>
+
+        <!-- STEP 6 -->
+        <div class="wizard-step">
+          <h2>Communication & Logistics</h2>
+
+          <label>Who would be the primary point of contact for nursing services?</label>
+          <input type="text" name="primary_contact">
+
+          <label>What is your preferred communication style</label>
+          <input type="text" name="communication_style" placeholder="Email, phone, scheduled meetings…">
+
+          <label>When would you like to begin services?</label>
+          <input type="text" name="start_timeline">
+
+          <label>Please share any additional information about your agency, individuals supported, or specific needs so we can better understand how to assist you.</label>
+          <textarea name="additional_info" rows="4"></textarea>
+
+          <button type="button" class="wizard-back">Back</button>
+          <button type="submit" class="wizard-submit">Submit</button>
+        </div>
+
       </form>
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
     <div class="container">
       <p>&copy; <span id="year"></span> Rise Nurse Collective, LLC. All rights reserved.</p>
-      <p>
-        <a href="privacy.html">Privacy Policy</a> &middot;
-        <a href="terms.html">Terms of Service</a>
-      </p>
+      <a href="privacy.html">Privacy Policy</a> &middot;
+      <a href="terms.html">Terms of Service</a>
     </div>
   </footer>
 
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/wizard.js"></script>
+
 </body>
+
 </html>
