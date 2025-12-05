@@ -6,12 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-<body>
+<body class="home">
   <!-- Header -->
-  <header>
+  <header class="site-header">
     <div class="container nav-container">
       <a href="index.html" class="nav-logo">
-        <!-- Update src to your actual logo path -->
         <img src="assets/images/logo-light.jpg" alt="Rise Nurse Collective logo">
       </a>
       <div class="mobile-toggle" aria-label="Toggle navigation">&#9776;</div>
@@ -27,70 +26,164 @@
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container">
-      <h1>Compassionate Nurse Delegation for Individuals with IDD</h1>
-      <p>
-        Rise Nurse Collective specializes in DDA Nurse Delegation services for people with intellectual
-        and developmental disabilities—bridging compassionate care with regulatory excellence.
-      </p>
-      <a href="contact.html" class="cta-btn">Request Services</a>
-    </div>
-  </section>
+  <!-- Parallax Hero -->
+  <section class="home-hero">
+    <!-- background tint layers -->
+    <div class="hero-layer hero-layer--mountains" data-parallax="0.25"></div>
+    <div class="hero-layer hero-layer--forest" data-parallax="0.45"></div>
+    <div class="hero-layer hero-layer--glow" data-parallax="0.1"></div>
 
-  <!-- Intro / Who We Are -->
-  <section>
-    <div class="container">
-      <h2>Person-Centered Nursing Support</h2>
-      <p>
-        We partner with individuals, families, and provider agencies to ensure safe, skillful, and compliant
-        nursing care in community settings. Our nurses provide education, support, and oversight so
-        direct support professionals feel confident in the care they provide every day.
-      </p>
-    </div>
-  </section>
+    <div class="container home-hero-inner">
+      <div class="home-hero-copy">
+        <p class="eyebrow">DDA Nurse Delegation • Maryland</p>
+        <h1>Where compassionate nursing meets everyday life.</h1>
+        <p class="hero-sub">
+          Rise Nurse Collective partners with individuals, families, and agencies to provide
+          safe, person-centered Nurse Delegation for people with intellectual and developmental disabilities.
+        </p>
 
-  <!-- Services Overview -->
-  <section>
-    <div class="container">
-      <h2>How We Serve</h2>
-      <div class="card-grid">
-        <article class="card">
-          <h3>DDA Nurse Delegation</h3>
-          <p>
-            Ongoing delegation and oversight for medication administration and nursing tasks in DDA settings.
-          </p>
-        </article>
+        <div class="hero-ctas">
+          <a href="contact.html" class="btn btn-primary">Request Services</a>
+          <a href="#how-it-works" class="btn btn-ghost">How Delegation Works</a>
+        </div>
 
-        <article class="card">
+        <div class="hero-mini-tags">
+          <span>Person-centered</span>
+          <span>Regulation-aligned</span>
+          <span>Real-world support</span>
+        </div>
+      </div>
+
+      <div class="home-hero-visual" data-parallax="0.25">
+        <div class="hero-photo-frame">
+          <!-- TOP IMAGE -->
+          <img src="assets/images/image1.png"
+               alt="Nurse supporting an adult with developmental disabilities at home">
+        </div>
+
+        <!-- floating cards that hover + parallax 
+        <div class="floating-badge badge--top">
+          <h3>Ongoing Delegation</h3>
+          <p>Monthly RN follow-up and documentation.</p>
+        </div>
+        <div class="floating-badge badge--middle">
           <h3>Caregiver Training</h3>
-          <p>
-            Hands-on education for direct support staff to safely complete delegated nursing tasks.
-          </p>
+          <p>Medication, observation, and safety skills.</p>
+        </div>
+        <div class="floating-badge badge--bottom">
+          <h3>Team Support</h3>
+          <p>We collaborate with the whole circle of support.</p>
+        </div> -->
+      </div>
+    </div>
+
+    <button class="scroll-hint" aria-label="Scroll to learn more">
+      <span class="scroll-dot"></span>
+    </button>
+  </section>
+
+  <!-- Step strip: How it works -->
+  <section id="how-it-works" class="home-steps">
+    <div class="container">
+      <h2>How Nurse Delegation Works</h2>
+      <p class="section-intro">
+        A clear, repeatable process so everyone knows what to expect—from intake to ongoing RN support.
+      </p>
+
+      <div class="step-grid">
+        <article class="step-card">
+          <span class="step-number">1</span>
+          <h3>Connect & Learn</h3>
+          <p>We listen to the individual’s story, current supports, and what’s needed from nursing.</p>
         </article>
 
-        <article class="card">
-          <h3>Health Consultation</h3>
-          <p>
-            Collaborative support for teams navigating changing health needs, new diagnoses, or care plans.
-          </p>
+        <article class="step-card">
+          <span class="step-number">2</span>
+          <h3>Nursing Assessment</h3>
+          <p>The RN completes an assessment and identifies delegable tasks and needed training.</p>
+        </article>
+
+        <article class="step-card">
+          <span class="step-number">3</span>
+          <h3>Train & Delegate</h3>
+          <p>Direct support staff are trained, observed, and delegated to perform nursing tasks.</p>
+        </article>
+
+        <article class="step-card">
+          <span class="step-number">4</span>
+          <h3>Ongoing Support</h3>
+          <p>We stay involved with routine visits, re-training, and documentation updates.</p>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- Future Classes / Booking Teaser -->
-  <section>
-    <div class="container">
-      <h2>Education & Classes (Coming Soon)</h2>
-      <p>
-        Rise Nurse Collective will soon offer scheduled classes for caregivers and provider agencies,
-        including medication administration, documentation best practices, and health advocacy training.
-      </p>
-      <p>
-        Join our mailing list or contact us to be notified when online booking opens.
-      </p>
+  <!-- NEW “Real homes” section using image4.png -->
+  <section class="home-panels">
+    <div class="container home-real">
+      <div class="home-real-image" data-parallax="0.02">
+        <!-- BOTTOM IMAGE -->
+        <img src="assets/images/image4.png"
+             alt="Nurse working with an adult in a wheelchair at a table">
+      </div>
+
+      <div class="home-real-copy">
+        <h2>Care that fits real homes and real routines.</h2>
+        <p>
+          Delegation is more than a signature—it’s about making sure everyday support feels safe,
+          respectful, and doable in the places people actually live and spend time.
+        </p>
+
+        <div class="real-points">
+          <div class="real-point">
+            <span class="real-dot"></span>
+            <div>
+              <h3>Homes, not hospitals.</h3>
+              <p>We focus on practical nursing support that fits into living rooms, kitchens, and day programs.</p>
+            </p>
+            </div>
+          </div>
+
+          <div class="real-point">
+            <span class="real-dot"></span>
+            <div>
+              <h3>Support for staff.</h3>
+              <p>Direct support professionals get clear guidance, not just binders—so they know what to do and when.</p>
+            </div>
+          </div>
+
+          <div class="real-point">
+            <span class="real-dot"></span>
+            <div>
+              <h3>Centered on the person.</h3>
+              <p>We keep the person’s preferences, communication style, and goals at the heart of every plan.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Classes band -->
+  <section class="home-classes">
+    <div class="container home-classes-inner">
+      <div>
+        <h2>Classes & Workshops (Coming Soon)</h2>
+        <p>
+          We’re building a calendar of live and virtual trainings on medication administration,
+          documentation, and health advocacy for people with IDD.
+        </p>
+        <p class="small">
+          You’ll soon be able to book seats online. For early access or group requests,
+          reach out and we’ll add you to the interest list.
+        </p>
+      </div>
+      <div class="classes-pill-grid">
+        <span class="pill">Medication Administration</span>
+        <span class="pill">Observation & Reporting</span>
+        <span class="pill">Emergency Response Basics</span>
+        <span class="pill">Person-Centered Health Support</span>
+      </div>
     </div>
   </section>
 
