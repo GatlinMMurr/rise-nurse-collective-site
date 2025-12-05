@@ -54,4 +54,60 @@ document.addEventListener("DOMContentLoaded", function () {
       window.addEventListener("scroll", handleParallax);
     }
   });
-  
+  // Multi-step wizard logic
+document.addEventListener("DOMContentLoaded", () => {
+  const steps = Array.from(document.querySelectorAll(".wizard-step"));
+  const nextBtns = document.querySelectorAll(".wizard-next");
+  const backBtns = document.querySelectorAll(".wizard-back");
+  const progressBar = document.getElementById("wizardProgress");
+
+  let currentStep = 0;
+
+  function updateStep() {
+    steps.forEach((step, index) => {
+      step.classList.toggle("active", index === currentStep);
+    });
+
+    // Update progress bar
+    const progressPercent = ((currentStep + 1) / steps.length) * 100;
+    progressBar.style.width = progressPercent + "%";
+  }
+
+  nextBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      if (currentStep < steps.length - 1) {
+        currentStep++;
+        updateStep();
+      }
+    });
+  });
+
+  backBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      if (currentStep > 0) {
+        currentStep--;
+        updateStep();
+      }
+    });
+  });
+
+  updateStep();
+});
+document.addEventListener("DOMContentLoaded", () => {
+  const items = document.querySelectorAll(".faq-item");
+
+  items.forEach(item => {
+    const questionBtn = item.querySelector(".faq-question");
+
+    questionBtn.addEventListener("click", () => {
+      const isOpen = item.classList.contains("open");
+
+      // If you want only one open at a time:
+      items.forEach(i => i.classList.remove("open"));
+
+      if (!isOpen) {
+        item.classList.add("open");
+      }
+    });
+  });
+});
