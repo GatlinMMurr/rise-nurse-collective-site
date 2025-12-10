@@ -111,3 +111,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+/* TEAM MEMBER "READ MORE" TOGGLE */
+document.addEventListener("DOMContentLoaded", () => {
+  const buttons = document.querySelectorAll(".team-readmore");
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const bio = btn.previousElementSibling;
+
+      bio.classList.toggle("collapsed");
+
+      if (bio.classList.contains("collapsed")) {
+        btn.textContent = "Read More";
+      } else {
+        btn.textContent = "Read Less";
+      }
+    });
+  });
+});
